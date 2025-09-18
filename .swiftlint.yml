@@ -1,0 +1,46 @@
+opt_in_rules:
+  - force_unwrapping
+
+# ---------- 名前関連 ----------
+identifier_name:
+  min_length: 3
+  max_length: 40
+
+type_name:
+  min_length: 3
+  max_length: 40
+
+# ---------- コードの長さ ----------
+line_length:
+  warning: 120
+  error: 200
+
+file_length:
+  warning: 400
+  error: 600
+
+# ---------- 複雑さ ----------
+cyclomatic_complexity:
+  warning: 10
+  error: 20
+
+# ---------- 強制アンラップ・キャスト ----------
+force_cast:
+  severity: warning
+
+force_unwrapping:
+  severity: warning
+
+# ---------- TODO コメント ----------
+todo:
+  severity: warning
+
+# ---------- 空白 ----------
+trailing_whitespace:
+  severity: warning
+
+# ---------- 無効にしたいルール ----------
+disabled_rules:
+  - colon
+  - comma
+  - vertical_parameter_alignment
