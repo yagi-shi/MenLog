@@ -22,6 +22,7 @@ struct EditView: View {
         Form {
             TextField("店名", text: $tempStoreName)
             DatePicker("日付", selection: $tempDate, displayedComponents: .date)
+                .environment(\.locale, Locale(identifier: "en_US"))
             HStack {
                 Text("評価")
                 Spacer()
