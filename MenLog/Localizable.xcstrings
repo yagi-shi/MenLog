@@ -11,6 +11,9 @@
         }
       }
     },
+    "Date" : {
+
+    },
     "MenLog" : {
       "localizations" : {
         "ja" : {
@@ -133,16 +136,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Name"
-          }
-        }
-      }
-    },
-    "日付" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Date"
           }
         }
       }

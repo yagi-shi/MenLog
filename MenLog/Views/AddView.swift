@@ -23,7 +23,7 @@ struct AddView: View {
             Form {
                 Section(header: Text("基本情報")) {
                     TextField("店名", text: $storeName)
-                    DatePicker("日付", selection: $date, displayedComponents: .date)
+                    DatePicker("Date", selection: $date, displayedComponents: .date)
                         .environment(\.locale, Locale(identifier: "en_US"))
                     HStack {
                         Text("評価")
