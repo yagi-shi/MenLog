@@ -5,6 +5,7 @@
 import SwiftUI
 import SwiftData
 import PhotosUI
+import StoreKit
 
 struct AddView: View {
     @Environment(\.dismiss) private var dismiss
@@ -22,7 +23,8 @@ struct AddView: View {
             Form {
                 Section(header: Text("基本情報")) {
                     TextField("店名", text: $storeName)
-                    DatePicker("日付", selection: $date, displayedComponents: .date)
+                    DatePicker("Date", selection: $date, displayedComponents: .date)
+                        .environment(\.locale, Locale(identifier: "en_US"))
                     HStack {
                         Text("評価")
                         Spacer()
@@ -73,6 +75,10 @@ struct AddView: View {
                         context.insert(newEntry)
                         do {
                             try context.save()
+                            if let scene = UIApplication.shared.connectedScenes
+                                .first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+                                SKStoreReviewController.requestReview(in: scene)
+                            }
                             dismiss() // 保存成功なら閉じる
                         } catch {
                             print("保存失敗: \(error.localizedDescription)")
